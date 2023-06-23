@@ -31,5 +31,14 @@ def math_operation_via_postman():
         return jsonify(result)
 
 
+# sending data though url
+# to test add app route and then ?val1=10&val2=20
+@app.route('/url_test')
+def url_test1():
+    test1 = int(request.args.get('val1'))
+    test2 = int(request.args.get('val2'))
+
+    return '''result is {}'''.format(test1+test2)
+
 if __name__ == '__main__':
     app.run()
